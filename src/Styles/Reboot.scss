@@ -15,14 +15,7 @@
 // 3. Correct the line height in all browsers.
 // 4. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
 // 5. Change the default tap highlight to be completely transparent in iOS.
-@font-face {
-  font-family: Vazirmatn;
-  src: url('../fonts/Vazirmatn[wght].woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-$font-family-base: "Vazirmatn", tahoma, arial;
+$font-family-base: "Poppins", tahoma, arial;
 $font-size-base: 16px;
 $font-weight-base: 600;
 $line-height-base: initial;
