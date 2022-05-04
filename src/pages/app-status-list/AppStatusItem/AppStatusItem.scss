@@ -1,0 +1,24 @@
+.app-status-item-component{
+    width: 400px;
+    height: 400px;
+    border: solid 1px #ccc;
+    &.--connected{
+        border-color: green;
+    }
+    &.--disconnected{
+        border-color: red;
+    }
+    .app-status-item-icon{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            
+        }
+    }
+}

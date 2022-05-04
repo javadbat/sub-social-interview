@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import React from 'react'
+import AppStatusItem from './AppStatusItem/AppStatusItem';
 import './AppStatusList.scss';
 import { AppStatusListViewModel } from './AppStatusListViewModel';
 
@@ -11,10 +12,7 @@ function AppStatusList() {
       {
         vm.appList.map(app=>{
           return (
-            <div key={app.appName} className={"app-item "+(app.connected?'--connected':'--disconnected')}>
-              <div className="app-item-icon"><img alt={app.name} src={app.icon}></img></div>
-              <div className="app-item-name">{app.name}</div>
-            </div>
+            <AppStatusItem appName={app.appName} name={app.name} icon={app.icon} connected={app.connected} key={app.appName}></AppStatusItem>
           )
         })
       }
