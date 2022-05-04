@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useMobx } from '../../utils/custom-hooks/useMobx';
 import AppStatusItem from './AppStatusItem/AppStatusItem';
 import './AppStatusList.scss';
@@ -8,7 +8,10 @@ import { AppStatusListViewModel } from './AppStatusListViewModel';
 //const vm = new AppStatusListViewModel();
 
 function AppStatusList() {
-  const vm = useMobx<AppStatusListViewModel, typeof AppStatusListViewModel>(AppStatusListViewModel,["javad"]);
+  const vm = useMobx<AppStatusListViewModel, typeof AppStatusListViewModel>(AppStatusListViewModel,[]);
+  useEffect(() => {
+    return ()=>{vm.stopStatusCheckSchadule()}
+  },[]);
   return (
     <div className='app-status-list-page'>
       {

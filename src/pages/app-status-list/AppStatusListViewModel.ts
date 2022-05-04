@@ -26,7 +26,7 @@ type AppItem = {
 export class AppStatusListViewModel implements MobxStore {
     appList:AppItem[] = [];
     checkStatusInterval?: NodeJS.Timer = undefined;
-    constructor(name:string) {
+    constructor() {
         makeObservable(this, {
             appList: observable,
             updateAppConnectionStatus:action,
