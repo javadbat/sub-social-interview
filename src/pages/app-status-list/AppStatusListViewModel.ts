@@ -1,6 +1,7 @@
 import { action, makeObservable, observable } from "mobx";
 import { CheckAppNetworkStatus, getAppList } from "./AppStatusListService";
 import {addressConfig} from "../../config/address-config";
+import {MobxStore} from '../../utils/mobx-store';
 type ServerAppData = {
     connected: boolean
     icon: string
@@ -22,10 +23,10 @@ type AppItem = {
     relayChain: string
     ss58Format: number
 }
-export class AppStatusListViewModel {
+export class AppStatusListViewModel implements MobxStore {
     appList:AppItem[] = [];
     checkStatusInterval?: NodeJS.Timer = undefined;
-    constructor() {
+    constructor(name:string) {
         makeObservable(this, {
             appList: observable,
             updateAppConnectionStatus:action,

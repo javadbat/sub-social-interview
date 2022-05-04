@@ -1,12 +1,14 @@
 import { observer } from 'mobx-react';
 import React from 'react'
+import { useMobx } from '../../utils/custom-hooks/useMobx';
 import AppStatusItem from './AppStatusItem/AppStatusItem';
 import './AppStatusList.scss';
 import { AppStatusListViewModel } from './AppStatusListViewModel';
 
-const vm = new AppStatusListViewModel();
+//const vm = new AppStatusListViewModel();
 
 function AppStatusList() {
+  const vm = useMobx<AppStatusListViewModel, typeof AppStatusListViewModel>(AppStatusListViewModel,["javad"]);
   return (
     <div className='app-status-list-page'>
       {
