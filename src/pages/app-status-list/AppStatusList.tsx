@@ -13,7 +13,7 @@ function AppStatusList() {
     return ()=>{vm.stopStatusCheckSchadule()}
   },[]);
   return (
-    <div className='app-status-list-page'>
+    <div className='app-status-list-page app-page'>
       {
         vm.appList.map(app=>{
           return (

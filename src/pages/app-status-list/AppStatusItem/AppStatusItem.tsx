@@ -14,6 +14,7 @@ function AppStatusItem(props:AppStatusItemProps) {
         <div key={props.appName} className={"app-status-item-component " + (props.connected ? '--connected' : '--disconnected')}>
             <div className="app-status-item-icon"><img alt={props.name} src={props.icon}></img></div>
             <div className="app-status-item-name">{props.name}</div>
+            <div className={"app-status-item-status " + (props.connected ? '--connected' : '--disconnected')}>{props.connected ? 'Connected' : 'Disconnected'}</div>
         </div>
     )
 }
